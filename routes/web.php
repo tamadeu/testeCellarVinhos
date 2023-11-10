@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PermissoesController;
+use App\Http\Controllers\PesquisaController;
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
@@ -22,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->group(function () {
 
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::post('/pesquisa', [PesquisaController::class, 'pesquisa'])->name('pesquisa');
 
     Route::prefix('usuarios')->group(function () {
         Route::get('/', [UsersController::class, 'index'])->name('usuarios');

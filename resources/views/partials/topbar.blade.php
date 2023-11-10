@@ -5,10 +5,11 @@
     <a href="#!" class="searchbox-toggle">
         <i class="fas fa-search"></i>
     </a>
-    <form class="searchbox" action="#!">
+    <form class="searchbox" method="POST" action="{{ route('pesquisa') }}">
         <a href="#!" class="searchbox-toggle"> <i class="fas fa-arrow-left"></i> </a>
-        <button type="submit" class="searchbox-submit"> <i class="fas fa-search"></i> </button>
-        <input type="text" class="searchbox-input" placeholder="type to search">
+            @csrf
+            <button type="submit" class="searchbox-submit"> <i class="fas fa-search"></i> </button>
+            <input type="text" class="searchbox-input" name="termo" placeholder="digite para pesquisar e pressione enter">
     </form>
     <div class="tools">
         <a href="https://github.com/tamadeu/testeCellarVinhos" target="_blank" class="tools-item">

@@ -20,8 +20,10 @@ Para instalar o projeto será necessário criar um banco de dados local. Após c
 
 Agora vamos editar o arquivo .env do projeto.
 
+- Copie o arquivo .env.example para .env
 - Abra o arquivo .env
 - altere os dados do banco de dados para o seu banco recém criado
+- Se quiser, altere também o APP_NAME. Deixei o nome Cellar Vinhos como padrão.
 
 Pronto, agora podemos rodar o projeto com o comando de terminal
 
@@ -56,3 +58,12 @@ Os usuários são divididos em dois perfis:
 Ambos tem as permissões definidas pelo módulo de Permissões.
 
 Quando um usuário faz o registro no sistema através da tela de Registro, automaticamente ele é atribuído ao perfil Usuário. Caso o registro seja feito por outro usuário dentro do sistema, existe a opção para escolher o perfil.
+
+## Sistema de busca
+
+A pesquisa busca nas tabelas:
+- Usuários
+- Produtos
+- Categorias
+
+Ela também checa as permissões. Então, se um usuário não tem permissão de leitura de produtos, nos resultados da pesquisa os produtos não aparecerão.
